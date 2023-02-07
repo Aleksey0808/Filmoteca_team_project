@@ -75,16 +75,6 @@ function handlrePagination(evt) {
           Notiflix.Notify.failure('Data error1');
         });
       return;
-    } else if (!localStorage.getItem('watched') === null) {
-      getUpcomingMovies((globalCurrentPage -= 1))
-        .then(data => {
-          createCardMarkup(data.results);
-          pagination(data.page, data.total_pages);
-        })
-        .catch(error => {
-          Notiflix.Notify.failure(console.log(error));
-        });
-      return;
     } else {
       getPopularMoviesFetch((globalCurrentPage -= 1))
         .then(data => {
@@ -106,16 +96,6 @@ function handlrePagination(evt) {
         })
         .catch(error => {
           Notiflix.Notify.failure('Data error1');
-        });
-      return;
-    } else if (!localStorage.getItem('watched') === null) {
-      getUpcomingMovies((globalCurrentPage += 1))
-        .then(data => {
-          createCardMarkup(data.results);
-          pagination(data.page, data.total_pages);
-        })
-        .catch(error => {
-          Notiflix.Notify.failure(console.log(error));
         });
       return;
     } else {
@@ -140,16 +120,6 @@ function handlrePagination(evt) {
       })
       .catch(error => {
         Notiflix.Notify.failure('Data error1');
-      });
-    return;
-  } else if (!localStorage.getItem('watched') === null) {
-    getUpcomingMovies(page)
-      .then(data => {
-        createCardMarkup(data.results);
-        pagination(data.page, data.total_pages);
-      })
-      .catch(error => {
-        Notiflix.Notify.failure(console.log(error));
       });
     return;
   } else {

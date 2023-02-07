@@ -40,6 +40,7 @@ function createCardMarkup(res) {
     .join('');
 
   galleryEl.innerHTML = markup;
+
   if (res.length) {
     smoothScrolling();
   }
@@ -56,8 +57,9 @@ async function createPopularMoviesMarkup() {
 }
 
 function smoothScrolling() {
-  const { height: cardHeight } =
-    galleryEl.firstElementChild.getBoundingClientRect();
+  const {
+    height: cardHeight,
+  } = galleryEl.firstElementChild.getBoundingClientRect();
 
   window.scrollBy({
     top: cardHeight * -200,

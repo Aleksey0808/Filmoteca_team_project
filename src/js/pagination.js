@@ -8,6 +8,7 @@ import Notiflix from 'notiflix';
 import { searchQuery } from './input';
 
 const paginationBox = document.querySelector('.pagination');
+
 let globalCurrentPage = 0;
 
 export default function pagination(currentPage, allPages) {
